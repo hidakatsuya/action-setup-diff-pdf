@@ -1,25 +1,30 @@
-name: "units-test"
+name: Test this action
+
 on:
-  pull_request:
   push:
-    branches:
-      - main
-      - 'releases/*'
+  pull_request:
+  workflow_dispatch:
 
 jobs:
-  # unit tests
-  units:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - run: npm ci
-    - run: npm test
-
-  # test action works running from the graph
   test:
-    runs-on: ubuntu-latest
+    name: ${{ matrix.platform }}
+    runs-on: ${{ matrix.platform }}
+
+    # Run this build only on either pull request or push.
+    if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name != github.repository
+
+    strategy:
+      matrix:
+        platform:
+          - ubuntu-latest
+
     steps:
     - uses: actions/checkout@v2
+
     - uses: ./
       with:
-        milliseconds: 1000
+        diff-pdf-version: 0.5
+
+
+    - name: Execute diff-pdf command
+      run: diff-pdf --help

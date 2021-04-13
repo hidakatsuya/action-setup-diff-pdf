@@ -1,13 +1,9 @@
-name: 'Wait'
-description: 'Wait a designated number of milliseconds'
+name: Setup diff-pdf
+description: Install diff-pdf with the specified version
 inputs:
-  milliseconds:  # id of input
-    description: 'number of milliseconds to wait'
+  diff-pdf-version:
+    description: diff-pdf version. e.g. "0.5"
     required: true
-    default: '1000'
-outputs:
-  time: # output will be available to future steps
-    description: 'The message to output'
 runs:
-  using: 'node12'
-  main: 'dist/index.js'
+  using: node12
+  main: dist/index.js
