@@ -1,5 +1,7 @@
 # setup-diff-pdf
 
+GitHub Action to install [diff-pdf](https://github.com/vslavik/diff-pdf).
+
 [![test](https://github.com/hidakatsuya/action-setup-diff-pdf/actions/workflows/test.yml/badge.svg)](https://github.com/hidakatsuya/action-setup-diff-pdf/actions/workflows/test.yml)
 
 Use this template to bootstrap the creation of a JavaScript action.:rocket:

@@ -1,7 +1,7 @@
 {
   "name": "setup-diff-pdf",
   "version": "1.0.0",
-  "description": "Install diff-pdf with the specified version",
+  "description": "GitHub Action to install diff-pdf",
   "main": "index.js",
   "scripts": {
     "package": "ncc build index.js -o dist --source-map --license licenses.txt"

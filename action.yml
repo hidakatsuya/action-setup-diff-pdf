@@ -1,5 +1,5 @@
 name: Setup diff-pdf
-description: Install diff-pdf with the specified version
+description: GitHub Action to install diff-pdf
 inputs:
   diff-pdf-version:
     description: diff-pdf version. e.g. "0.5"
