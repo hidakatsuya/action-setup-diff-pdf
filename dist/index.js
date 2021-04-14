@@ -2,54 +2,7 @@ module.exports =
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 932:
-/***/ ((__unused_webpack_module, __unused_webpack_exports, __nccwpck_require__) => {
-
-const core = __nccwpck_require__(186);
-const exec = __nccwpck_require__(514);
-
-const VERSION = '0.5';
-const REQUIRED_APT_PACKAGES = [
-  'make',
-  'automake',
-  'g++',
-  'libpoppler-glib-dev',
-  'poppler-utils',
-  'libwxgtk3.0-gtk3-dev'
-];
-const WORKING_DIR = '/tmp/diff-pdf-src';
-
-async function linux() {
-  await exec.exec('sudo apt update');
-  await exec.exec(`sudo apt install ${REQUIRED_APT_PACKAGES.join(' ')}`);
-  await exec.exec(`git clone https://github.com/vslavik/diff-pdf.git -b v${VERSION} --depth 1 ${WORKING_DIR}`);
-
-  const buildOptions = {
-    cwd: WORKING_DIR
-  };
-  await exec.exec('./bootstrap', undefined, buildOptions);
-  await exec.exec('./configure', undefined, buildOptions);
-  await exec.exec('make', undefined, buildOptions);
-  await exec.exec('sudo make install', undefined, buildOptions);
-}
-
-async function run() {
-  try {
-    if (process.platform !== 'linux') {
-      throw new Error(`${process.platform} not supported`);
-    }
-    await linux();
-  } catch (error) {
-    core.setFailed(error.message);
-  }
-}
-
-run();
-
-
-/***/ }),
-
-/***/ 351:
+/***/ 241:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
@@ -157,7 +110,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-const command_1 = __nccwpck_require__(351);
+const command_1 = __nccwpck_require__(241);
 const file_command_1 = __nccwpck_require__(717);
 const utils_1 = __nccwpck_require__(278);
 const os = __importStar(__nccwpck_require__(87));
@@ -1629,6 +1582,69 @@ function copyFile(srcFile, destFile, force) {
 
 /***/ }),
 
+/***/ 351:
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __nccwpck_require__) => {
+
+const core = __nccwpck_require__(186);
+const linux = __nccwpck_require__(831);
+
+async function run() {
+  try {
+    switch (process.platform) {
+      case 'linux':
+        await linux.setup();
+        break;
+      default:
+        throw new Error(`${process.platform} not supported`);
+    }
+  } catch (error) {
+    core.setFailed(error.message);
+  }
+}
+
+run();
+
+
+/***/ }),
+
+/***/ 831:
+/***/ ((__unused_webpack_module, __webpack_exports__, __nccwpck_require__) => {
+
+"use strict";
+__nccwpck_require__.r(__webpack_exports__);
+/* harmony export */ __nccwpck_require__.d(__webpack_exports__, {
+/* harmony export */   "setup": () => /* binding */ setup
+/* harmony export */ });
+const exec = __nccwpck_require__(514);
+
+const VERSION = '0.5';
+const REQUIRED_PACKAGES = [
+  'make',
+  'automake',
+  'g++',
+  'libpoppler-glib-dev',
+  'poppler-utils',
+  'libwxgtk3.0-gtk3-dev'
+];
+const WORKING_DIR = '/tmp/diff-pdf-src';
+
+async function setup() {
+  await exec.exec('sudo apt update');
+  await exec.exec(`sudo apt install ${REQUIRED_PACKAGES.join(' ')}`);
+  await exec.exec(`git clone https://github.com/vslavik/diff-pdf.git -b v${VERSION} --depth 1 ${WORKING_DIR}`);
+
+  const buildOptions = {
+    cwd: WORKING_DIR
+  };
+  await exec.exec('./bootstrap', undefined, buildOptions);
+  await exec.exec('./configure', undefined, buildOptions);
+  await exec.exec('make', undefined, buildOptions);
+  await exec.exec('sudo make install', undefined, buildOptions);
+}
+
+
+/***/ }),
+
 /***/ 357:
 /***/ ((module) => {
 
@@ -1717,12 +1733,40 @@ module.exports = require("util");;
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__nccwpck_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__nccwpck_require__.o(definition, key) && !__nccwpck_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__nccwpck_require__.o = (obj, prop) => Object.prototype.hasOwnProperty.call(obj, prop)
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__nccwpck_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/compat */
 /******/ 	
 /******/ 	__nccwpck_require__.ab = __dirname + "/";/************************************************************************/
 /******/ 	// module exports must be returned from runtime so entry inlining is disabled
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
-/******/ 	return __nccwpck_require__(932);
+/******/ 	return __nccwpck_require__(351);
 /******/ })()
 ;
