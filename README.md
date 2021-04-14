@@ -2,7 +2,8 @@
 
 GitHub Action to install [diff-pdf](https://github.com/vslavik/diff-pdf).
 
-[![test](https://github.com/hidakatsuya/action-setup-diff-pdf/actions/workflows/test.yml/badge.svg)](https://github.com/hidakatsuya/action-setup-diff-pdf/actions/workflows/test.yml)
+[![Test this action](https://github.com/hidakatsuya/setup-diff-pdf/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/hidakatsuya/setup-diff-pdf/actions/workflows/test.yml?query=branch%3Amain)
+
 
 Use this template to bootstrap the creation of a JavaScript action.:rocket:
 
