@@ -13,7 +13,6 @@ jobs:
     name: ${{ matrix.platform }}
     runs-on: ${{ matrix.platform }}
 
-    # Run this build only on either pull request or push.
     if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name != github.repository
 
     strategy:
@@ -24,10 +23,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - uses: ./
+    - name: Setup diff-pdf
+      uses: ./
       with:
         diff-pdf-version: 0.5
 
 
-    - name: Execute diff-pdf command
+    - name: Echo diff-pdf
       run: diff-pdf --help
