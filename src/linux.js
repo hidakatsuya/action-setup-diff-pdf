@@ -1,6 +1,6 @@
 const exec = require('@actions/exec');
 
-const VERSION = '0.5';
+const WORKING_DIR = '/tmp/diff-pdf-src';
 const REQUIRED_PACKAGES = [
   'make',
   'automake',
@@ -9,12 +9,11 @@ const REQUIRED_PACKAGES = [
   'poppler-utils',
   'libwxgtk3.0-gtk3-dev'
 ];
-const WORKING_DIR = '/tmp/diff-pdf-src';
 
-export async function setup() {
+export async function setup(version) {
   await exec.exec('sudo apt update');
   await exec.exec(`sudo apt install ${REQUIRED_PACKAGES.join(' ')}`);
-  await exec.exec(`git clone https://github.com/vslavik/diff-pdf.git -b v${VERSION} --depth 1 ${WORKING_DIR}`);
+  await exec.exec(`git clone https://github.com/vslavik/diff-pdf.git -b v${version} --depth 1 ${WORKING_DIR}`);
 
   const buildOptions = {
     cwd: WORKING_DIR

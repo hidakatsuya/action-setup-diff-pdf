@@ -1588,11 +1588,13 @@ function copyFile(srcFile, destFile, force) {
 const core = __nccwpck_require__(186);
 const linux = __nccwpck_require__(831);
 
+const DIFF_PDF_VERSION = core.getInput('diff-pdf-version');
+
 async function run() {
   try {
     switch (process.platform) {
       case 'linux':
-        await linux.setup();
+        await linux.setup(DIFF_PDF_VERSION);
         break;
       default:
         throw new Error(`${process.platform} not supported`);
@@ -1617,7 +1619,7 @@ __nccwpck_require__.r(__webpack_exports__);
 /* harmony export */ });
 const exec = __nccwpck_require__(514);
 
-const VERSION = '0.5';
+const WORKING_DIR = '/tmp/diff-pdf-src';
 const REQUIRED_PACKAGES = [
   'make',
   'automake',
@@ -1626,12 +1628,11 @@ const REQUIRED_PACKAGES = [
   'poppler-utils',
   'libwxgtk3.0-gtk3-dev'
 ];
-const WORKING_DIR = '/tmp/diff-pdf-src';
 
-async function setup() {
+async function setup(version) {
   await exec.exec('sudo apt update');
   await exec.exec(`sudo apt install ${REQUIRED_PACKAGES.join(' ')}`);
-  await exec.exec(`git clone https://github.com/vslavik/diff-pdf.git -b v${VERSION} --depth 1 ${WORKING_DIR}`);
+  await exec.exec(`git clone https://github.com/vslavik/diff-pdf.git -b v${version} --depth 1 ${WORKING_DIR}`);
 
   const buildOptions = {
     cwd: WORKING_DIR
