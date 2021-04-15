@@ -31,3 +31,13 @@ This action follows [the recommendations of GitHub Actions Versioning](https://g
 $ yarn
 $ yarn run package
 ```
+
+## Releasing
+
+1. Check the package contents are up-to-date
+    ```
+    $ yarn run package
+    $ git diff
+    ```
+2. Create new release to publish to the GitHub Marketplace
+3. Make sure that [the release workflow](https://github.com/hidakatsuya/setup-diff-pdf/actions/workflows/release.yml) is successful
