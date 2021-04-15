@@ -1,5 +1,9 @@
 name: Setup diff-pdf
 description: GitHub Action to install diff-pdf
+author: hidakatsuya
+branding:
+  color: gray-dark
+  icon: download
 inputs:
   diff-pdf-version:
     description: diff-pdf version. e.g. "0.5"
