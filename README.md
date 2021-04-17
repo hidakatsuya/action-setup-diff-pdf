@@ -39,5 +39,5 @@ $ yarn run package
     $ yarn run package
     $ git diff
     ```
-2. Create new release to publish to the GitHub Marketplace
+2. Create a new release to publish to the GitHub Marketplace
 3. Make sure that [the release workflow](https://github.com/hidakatsuya/setup-diff-pdf/actions/workflows/release.yml) is successful
