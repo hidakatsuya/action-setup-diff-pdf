@@ -32,7 +32,7 @@ jobs:
     - name: Setup diff-pdf
       uses: ./
       with:
-        diff-pdf-version: 0.5
+        diff-pdf-version: '0.5'
 
     - name: Echo diff-pdf
       run: ${{ matrix.command }} --help
