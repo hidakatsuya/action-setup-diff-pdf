@@ -1,2 +1,2 @@
 /dist/** -diff linguist-generated
-/yarn.lock linguist-generated
+/yarn.lock -diff linguist-generated
