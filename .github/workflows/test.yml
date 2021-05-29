@@ -27,6 +27,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    - name: Build package
+      run: |
+        yarn install
+        yarn run package
+
     - name: Setup diff-pdf
       uses: ./
       with:
