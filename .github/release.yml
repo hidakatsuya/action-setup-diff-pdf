@@ -1,9 +1,6 @@
 # .github/release.yml
 
 changelog:
-  exclude:
-    authors:
-      - hidakatsuya
   categories:
     - title: Dependency Updates
       labels:
