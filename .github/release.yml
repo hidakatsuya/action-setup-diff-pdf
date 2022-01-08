@@ -1,7 +1,0 @@
-# .github/release.yml
-
-changelog:
-  categories:
-    - title: Dependency Updates
-      labels:
-        - dependencies
