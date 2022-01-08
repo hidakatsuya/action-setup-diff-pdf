@@ -5,6 +5,6 @@ changelog:
     authors:
       - hidakatsuya
   categories:
-    - title: Updating Dependencies
+    - title: Dependency Updates
       labels:
         - dependencies
