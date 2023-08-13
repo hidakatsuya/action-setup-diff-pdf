@@ -1,6 +1,6 @@
-# setup-diff-pdf
+# action-setup-diff-pdf
 
-GitHub Action to install [diff-pdf](https://github.com/vslavik/diff-pdf).
+A GitHub Action to install [diff-pdf](https://github.com/vslavik/diff-pdf).
 
 [![Test this action](https://github.com/hidakatsuya/setup-diff-pdf/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/hidakatsuya/setup-diff-pdf/actions/workflows/test.yml?query=branch%3Amain)
 
