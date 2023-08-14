@@ -12,7 +12,8 @@ A GitHub Action to install [diff-pdf](https://github.com/vslavik/diff-pdf).
     diff-pdf-version: '0.5'
 ```
 
-For the version of `diff-pdf` that can be specified, see [the diff-pdf releases](https://github.com/vslavik/diff-pdf/releases).
+- For the version of `diff-pdf` that can be specified, see [the diff-pdf releases](https://github.com/vslavik/diff-pdf/releases)
+- You can also specify a major version, such as `action-setup-diff-pdf@v1`
 
 ## Supported Platforms
 
