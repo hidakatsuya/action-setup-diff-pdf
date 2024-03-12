@@ -7,7 +7,7 @@ A GitHub Action to install [diff-pdf](https://github.com/vslavik/diff-pdf).
 ## Usage
 
 ```yaml
-- uses: hidakatsuya/action-setup-diff-pdf@v1.2.0
+- uses: hidakatsuya/action-setup-diff-pdf@v1.3.0
   with:
     diff-pdf-version: '0.5'
 ```
