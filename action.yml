@@ -9,5 +9,5 @@ inputs:
     description: diff-pdf version. e.g. "0.5"
     required: true
 runs:
-  using: node16
+  using: node20
   main: dist/index.js
