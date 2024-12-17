@@ -7,7 +7,7 @@ const REQUIRED_PACKAGES = [
   'g++',
   'libpoppler-glib-dev',
   'poppler-utils',
-  'libwxgtk3.0-gtk3-dev'
+  'libwxgtk3.2-dev'
 ];
 
 export async function setup(version) {
