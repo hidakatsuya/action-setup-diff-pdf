@@ -21,8 +21,8 @@ export async function setup(version) {
   });
 
   const wxgtkPackage = (ubuntuVersion === 'jammy')
-    ? 'libwxgtk3.2-dev'
-    : 'libwxgtk3.0-gtk3-dev';
+    ? 'libwxgtk3.0-gtk3-dev'
+    : 'libwxgtk3.2-dev';
 
   const REQUIRED_PACKAGES = [...REQUIRED_PACKAGES_BASE, wxgtkPackage];
 
