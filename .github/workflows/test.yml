@@ -3,10 +3,10 @@ name: Test this action
 on:
   pull_request:
     paths-ignore:
-      - '*.md'
+      - "*.md"
   push:
     paths-ignore:
-      - '*.md'
+      - "*.md"
 
 jobs:
   test:
@@ -26,20 +26,20 @@ jobs:
             command: diff-pdf.exe
 
     steps:
-    - if: ${{ startsWith(matrix.os, 'ubuntu-') }}
-      run: sudo apt-get install at-spi2-core
+      - if: ${{ startsWith(matrix.os, 'ubuntu-') }}
+        run: sudo apt-get install at-spi2-core
 
-    - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-    - name: Build package
-      run: |
-        yarn install
-        yarn run package
+      - name: Build package
+        run: |
+          yarn install
+          yarn run package
 
-    - name: Setup diff-pdf
-      uses: ./
-      with:
-        diff-pdf-version: '0.5'
+      - name: Setup diff-pdf
+        uses: ./
+        with:
+          diff-pdf-version: "0.5"
 
-    - name: Echo diff-pdf
-      run: ${{ matrix.command }} --help
+      - name: Echo diff-pdf
+        run: ${{ matrix.command }} --help
