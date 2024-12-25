@@ -17,15 +17,16 @@ jobs:
 
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest]
         include:
-          - os: ubuntu-latest
+          - os: ubuntu-24.04
+            command: xvfb-run -a diff-pdf
+          - os: ubuntu-22.04
             command: xvfb-run -a diff-pdf
           - os: windows-latest
             command: diff-pdf.exe
 
     steps:
-    - if: matrix.os == 'ubuntu-latest'
+    - if: ${{ startsWith(matrix.os, 'ubuntu-') }}
       run: sudo apt-get install at-spi2-core
 
     - uses: actions/checkout@v4
