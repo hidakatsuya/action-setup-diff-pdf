@@ -10,6 +10,14 @@
     "@actions/exec" "^1.1.1"
     "@actions/http-client" "^2.0.1"
 
+"@actions/core@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@actions/core/-/core-2.0.0.tgz#ab985a153dbf2c84e13c50cf1b559e3ca15f0c5e"
+  integrity sha512-iGW52/zqhPUFnYl0s1ioXfJu86LGs7b+GYuO38JMPpsh14FQrNj3n2JBpC+vZ2CFS4lERQyn5koLDopY+6V/PQ==
+  dependencies:
+    "@actions/exec" "^1.1.1"
+    "@actions/http-client" "^3.0.0"
+
 "@actions/exec@^1.0.0", "@actions/exec@^1.1.1":
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/@actions/exec/-/exec-1.1.1.tgz#2e43f28c54022537172819a7cf886c844221a611"
@@ -23,6 +31,14 @@
   integrity sha512-PIXiMVtz6VvyaRsGY268qvj57hXQEpsYogYOu2nrQhlf+XCGmZstmuZBbAybUl1nQGnvS1k1eEsQ69ZoD7xlSw==
   dependencies:
     tunnel "^0.0.6"
+
+"@actions/http-client@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@actions/http-client/-/http-client-3.0.0.tgz#6c6058bef29c0580d6683a08c5bf0362c90c2e6e"
+  integrity sha512-1s3tXAfVMSz9a4ZEBkXXRQD4QhY3+GAsWSbaYpeknPOKEeyRiU3lH+bHiLMZdo2x/fIeQ/hscL1wCkDLVM2DZQ==
+  dependencies:
+    tunnel "^0.0.6"
+    undici "^5.28.5"
 
 "@actions/io@^1.0.1", "@actions/io@^1.1.1":
   version "1.1.1"
@@ -40,6 +56,11 @@
     "@actions/io" "^1.1.1"
     semver "^6.1.0"
 
+"@fastify/busboy@^2.0.0":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@fastify/busboy/-/busboy-2.1.1.tgz#b9da6a878a371829a0502c9b6c1c143ef6663f4d"
+  integrity sha512-vBZP4NlzfOlerQTnba4aqZoMhE/a9HY7HRqoOPaETQcSQuWEIyZMHGfVu6w9wGtGK5fED5qRs2DteVCjOH60sA==
+
 "@vercel/ncc@^0.38.4":
   version "0.38.4"
   resolved "https://registry.yarnpkg.com/@vercel/ncc/-/ncc-0.38.4.tgz#e1fb8be9e7ed33bf44c121131d4c6e95f784afac"
@@ -54,3 +75,10 @@ tunnel@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/tunnel/-/tunnel-0.0.6.tgz#72f1314b34a5b192db012324df2cc587ca47f92c"
   integrity sha512-1h/Lnq9yajKY2PEbBadPXj3VxsDDu844OnaAo52UVmIzIvwwtBPIuNvkjuzBlTWpfJyUbG3ez0KSBibQkj4ojg==
+
+undici@^5.28.5:
+  version "5.29.0"
+  resolved "https://registry.yarnpkg.com/undici/-/undici-5.29.0.tgz#419595449ae3f2cdcba3580a2e8903399bd1f5a3"
+  integrity sha512-raqeBD6NQK4SkWhQzeYKd1KmIG6dllBOTt55Rmkt4HtI9mwdWtJljnrXjAFUBLTSN67HWrOIZ3EPF4kjUw80Bg==
+  dependencies:
+    "@fastify/busboy" "^2.0.0"
