@@ -2,15 +2,7 @@
 # yarn lockfile v1
 
 
-"@actions/core@^1.11.1":
-  version "1.11.1"
-  resolved "https://registry.yarnpkg.com/@actions/core/-/core-1.11.1.tgz#ae683aac5112438021588030efb53b1adb86f172"
-  integrity sha512-hXJCSrkwfA46Vd9Z3q4cpEpHB1rL5NG04+/rbqW9d3+CSvtB1tYe8UTpAlixa1vj0m/ULglfEK2UKxMGxCxv5A==
-  dependencies:
-    "@actions/exec" "^1.1.1"
-    "@actions/http-client" "^2.0.1"
-
-"@actions/core@^2.0.2":
+"@actions/core@^2.0.1", "@actions/core@^2.0.2":
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/@actions/core/-/core-2.0.2.tgz#81c59e1f3437660d2148a064c1ba8e99931f2cf7"
   integrity sha512-Ast1V7yHbGAhplAsuVlnb/5J8Mtr/Zl6byPPL+Qjq3lmfIgWF1ak1iYfF/079cRERiuTALTXkSuEUdZeDCfGtA==
@@ -18,7 +10,7 @@
     "@actions/exec" "^2.0.0"
     "@actions/http-client" "^3.0.1"
 
-"@actions/exec@^1.0.0", "@actions/exec@^1.1.1":
+"@actions/exec@^1.1.1":
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/@actions/exec/-/exec-1.1.1.tgz#2e43f28c54022537172819a7cf886c844221a611"
   integrity sha512-+sCcHHbVdk93a0XT19ECtO/gIXoxvdsgQLzb2fE2/5sIZmWQuluYyjPQtrtTHdU1YzTZ7bAPN4sITq2xi1679w==
@@ -32,13 +24,6 @@
   dependencies:
     "@actions/io" "^2.0.0"
 
-"@actions/http-client@^2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@actions/http-client/-/http-client-2.0.1.tgz#873f4ca98fe32f6839462a6f046332677322f99c"
-  integrity sha512-PIXiMVtz6VvyaRsGY268qvj57hXQEpsYogYOu2nrQhlf+XCGmZstmuZBbAybUl1nQGnvS1k1eEsQ69ZoD7xlSw==
-  dependencies:
-    tunnel "^0.0.6"
-
 "@actions/http-client@^3.0.1":
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/@actions/http-client/-/http-client-3.0.1.tgz#0ac91c3abf179a401e23d40abf0d7caa92324268"
@@ -47,7 +32,7 @@
     tunnel "^0.0.6"
     undici "^5.28.5"
 
-"@actions/io@^1.0.1", "@actions/io@^1.1.1":
+"@actions/io@^1.0.1":
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/@actions/io/-/io-1.1.1.tgz#4a157406309e212ab27ed3ae30e8c1d641686a66"
   integrity sha512-Qi4JoKXjmE0O67wAOH6y0n26QXhMKMFo7GD/4IXNVcrtLjUlGjGuVys6pQgwF3ArfGTQu0XpqaNr0YhED2RaRA==
@@ -57,15 +42,15 @@
   resolved "https://registry.yarnpkg.com/@actions/io/-/io-2.0.0.tgz#3ad1271ba3cd515324f2215e8d4c1c0c3864d65b"
   integrity sha512-Jv33IN09XLO+0HS79aaODsvIRyduiF7NY/F6LYeK5oeUmrsz7aFdRphQjFoESF4jS7lMauDOttKALcpapVDIAg==
 
-"@actions/tool-cache@^2.0.2":
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/@actions/tool-cache/-/tool-cache-2.0.2.tgz#49ff20b0352aeac5411988e88435e47144fabb3e"
-  integrity sha512-fBhNNOWxuoLxztQebpOaWu6WeVmuwa77Z+DxIZ1B+OYvGkGQon6kTVg6Z32Cb13WCuw0szqonK+hh03mJV7Z6w==
+"@actions/tool-cache@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@actions/tool-cache/-/tool-cache-3.0.0.tgz#78526510671d7abcb15824ac336aa366ef0d0cc2"
+  integrity sha512-JBx8gEWuu8Lqaqx/hEnL6QdKvF06suBR4y+dBDi9vJbHx1r+p6QtmBKhQYhiKjDUYIoDX1bUrbyAYPChoPK+XA==
   dependencies:
-    "@actions/core" "^1.11.1"
-    "@actions/exec" "^1.0.0"
-    "@actions/http-client" "^2.0.1"
-    "@actions/io" "^1.1.1"
+    "@actions/core" "^2.0.1"
+    "@actions/exec" "^2.0.0"
+    "@actions/http-client" "^3.0.1"
+    "@actions/io" "^2.0.0"
     semver "^6.1.0"
 
 "@fastify/busboy@^2.0.0":
