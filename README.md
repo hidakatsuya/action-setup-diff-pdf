@@ -7,13 +7,13 @@ A GitHub Action to install [diff-pdf](https://github.com/vslavik/diff-pdf).
 ## Usage
 
 ```yaml
-- uses: hidakatsuya/action-setup-diff-pdf@v1
+- uses: hidakatsuya/action-setup-diff-pdf@v1.6.0
   with:
     diff-pdf-version: '0.5.2'
 ```
 
 - For the version of `diff-pdf` that can be specified, see [the diff-pdf releases](https://github.com/vslavik/diff-pdf/releases)
-- You can also specify a major version, such as `action-setup-diff-pdf@v1`
+- You can also specify a major version tag, such as `action-setup-diff-pdf@v1`, but major version tags are NOT an immutable release.
 
 ## Supported Platforms
 
