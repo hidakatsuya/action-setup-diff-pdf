@@ -1,4 +1,4 @@
-const exec = require('@actions/exec');
+import * as exec from '@actions/exec';
 
 const WORKING_DIR = '/tmp/diff-pdf-src';
 const REQUIRED_PACKAGES_BASE = [

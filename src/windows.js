@@ -1,7 +1,7 @@
-const core = require('@actions/core');
-const tc = require('@actions/tool-cache');
-const os = require('os');
-const path = require('path');
+import * as core from '@actions/core';
+import * as tc from '@actions/tool-cache';
+import os from 'node:os';
+import path from 'node:path';
 
 const DIFF_PDF_BASE_DIR = path.join(os.homedir(), 'diff-pdf');
 
