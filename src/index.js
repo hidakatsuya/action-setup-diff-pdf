@@ -1,18 +1,18 @@
-const core = require('@actions/core');
+import * as core from '@actions/core';
 
-const linux = require('./linux');
-const windows = require('./windows');
-
-const DIFF_PDF_VERSION = core.getInput('diff-pdf-version');
+import { setup as setupLinux } from './linux.js';
+import { setup as setupWindows } from './windows.js';
 
 async function run() {
   try {
+    const diffPdfVersion = core.getInput('diff-pdf-version');
+
     switch (process.platform) {
       case 'linux':
-        await linux.setup(DIFF_PDF_VERSION);
+        await setupLinux(diffPdfVersion);
         break;
       case 'win32':
-        await windows.setup(DIFF_PDF_VERSION);
+        await setupWindows(diffPdfVersion);
         break;
       default:
         throw new Error(`${process.platform} not supported`);

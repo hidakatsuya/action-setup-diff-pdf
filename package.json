@@ -2,6 +2,7 @@
   "name": "setup-diff-pdf",
   "version": "1.0.0",
   "description": "GitHub Action to install diff-pdf",
+  "type": "module",
   "main": "src/index.js",
   "scripts": {
     "package": "ncc build src/index.js -o dist"
@@ -22,9 +23,9 @@
   },
   "homepage": "https://github.com/hidakatsuya/setup-diff-pdf",
   "dependencies": {
-    "@actions/core": "^2.0.2",
-    "@actions/exec": "^2.0.0",
-    "@actions/tool-cache": "^3.0.0"
+    "@actions/core": "^3.0.0",
+    "@actions/exec": "^3.0.0",
+    "@actions/tool-cache": "^4.0.0"
   },
   "devDependencies": {
     "@vercel/ncc": "^0.38.4"
